@@ -18,7 +18,7 @@
                 {
                     "name": "WASD",
                     "id": "1105dbb2-3c9c-496c-8407-ba1690d862b4",
-                    "path": "2DVector(mode=2)",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -73,7 +73,7 @@
                 {
                     "name": "Gamepad",
                     "id": "d6e21dd3-c698-4dfb-9542-39b486a815d2",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "StickDeadzone(min=0.1,max=1)",
                     "groups": "",

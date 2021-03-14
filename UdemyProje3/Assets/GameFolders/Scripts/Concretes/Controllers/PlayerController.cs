@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UdemyProject3.Abstracts.Inputs;
 using UdemyProject3.Abstracts.Movements;
+using UdemyProject3.Animations;
 using UdemyProject3.Movements;
 using UnityEngine;
 
@@ -14,6 +16,7 @@ namespace UdemyProject3.Controllers
         
         IInputReader _input;
         IMover _mover;
+        CharacterAnimation _animation;
 
         Vector3 _direction;
 
@@ -21,6 +24,7 @@ namespace UdemyProject3.Controllers
         {
             _input = GetComponent<IInputReader>();
             _mover = new MoveWithCharacterController(this);
+            _animation = new CharacterAnimation(this);
         }
 
         void Update()
@@ -31,6 +35,11 @@ namespace UdemyProject3.Controllers
         void FixedUpdate()
         {
             _mover.MoveAction(_direction,_moveSpeed);
+        }
+
+        void LateUpdate()
+        {
+            _animation.MoveAnimation(_direction.magnitude);
         }
     }
 }
