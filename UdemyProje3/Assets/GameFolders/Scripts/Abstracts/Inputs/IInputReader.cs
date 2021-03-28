@@ -6,5 +6,6 @@ namespace UdemyProject3.Abstracts.Inputs
     {
         Vector3 Direction { get; }
         Vector2 Rotation { get; }
+        bool IsAttackButtonPress { get; }
     }
 }
