@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9b23c62b6d128e44b5d7704c351975a, type: 3}
-  m_Name: RangeAttackType
+  m_Name: RangeAttackWeapon1
   m_EditorClassIdentifier: 
+  _attackType: 0
   _damage: 10
-  _floatValue: 1
+  _floatValue: 100
   _layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
+  _attackMaxDelay: 0.25
