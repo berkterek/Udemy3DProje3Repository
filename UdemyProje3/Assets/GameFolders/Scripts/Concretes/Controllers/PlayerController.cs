@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Inputs;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace UdemyProject3.Controllers
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour , IEntityController
     {
         [Header("Movement Informations")] [SerializeField]
         float _moveSpeed = 10f;
