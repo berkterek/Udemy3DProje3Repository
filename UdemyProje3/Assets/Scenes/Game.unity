@@ -1526,38 +1526,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.091
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.209
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.4708034
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.52758336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.52758336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.4708034
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811283892901247733, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 1814191474288438826, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1719,6 +1687,10 @@ PrefabInstance:
     - target: {fileID: 6160244915459906967, guid: 12befd702d209e743b08d7262eb103d4, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160244915459906967, guid: 12befd702d209e743b08d7262eb103d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6820762294994179227, guid: 12befd702d209e743b08d7262eb103d4, type: 3}
       propertyPath: _playerPrefab

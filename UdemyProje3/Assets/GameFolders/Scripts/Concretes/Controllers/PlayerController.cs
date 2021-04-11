@@ -15,13 +15,13 @@ namespace UdemyProject3.Controllers
         float _moveSpeed = 10f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
-        [SerializeField] WeaponController _currentWeapon;
         
         IInputReader _input;
         IMover _mover;
         IRotator _xRotator;
         IRotator _yRotator;
         CharacterAnimation _animation;
+        InventoryController _inventory;
 
         Vector3 _direction;
 
@@ -34,6 +34,7 @@ namespace UdemyProject3.Controllers
             _animation = new CharacterAnimation(this);
             _xRotator = new RototorX(this);
             _yRotator = new RotatorY(this);
+            _inventory = GetComponent<InventoryController>();
         }
 
         void Update()
@@ -45,7 +46,12 @@ namespace UdemyProject3.Controllers
 
             if (_input.IsAttackButtonPress)
             {
-                _currentWeapon.Attack();
+                _inventory.CurrentWeapon.Attack();
+            }
+
+            if (_input.IsInventoryButtonPressed)
+            {
+                _inventory.ChangeWeapon();
             }
         }
 

@@ -15,6 +15,7 @@ namespace UdemyProject3.Controllers
 
         float _currentTime = 0f;
         IAttackType _attackType;
+        public AttackSO AttackSO => _attackSo;
 
         void Awake()
         {
