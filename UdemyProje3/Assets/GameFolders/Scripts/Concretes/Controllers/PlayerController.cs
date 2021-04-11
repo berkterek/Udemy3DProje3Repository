@@ -58,7 +58,6 @@ namespace UdemyProject3.Controllers
         void FixedUpdate()
         {
             _mover.MoveAction(_direction,_moveSpeed);
-            
         }
 
         void LateUpdate()
