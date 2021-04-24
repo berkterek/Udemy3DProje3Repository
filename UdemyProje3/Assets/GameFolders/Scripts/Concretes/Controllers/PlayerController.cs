@@ -19,18 +19,19 @@ namespace UdemyProject3.Controllers
         IInputReader _input;
         IRotator _xRotator;
         IRotator _yRotator;
+        IMover _mover;
         CharacterAnimation _animation;
         InventoryController _inventory;
 
         Vector3 _direction;
 
         public Transform TurnTransform => _turnTransform;
-        public IMover Mover { get; private set; }
+        
 
         void Awake()
         {
             _input = GetComponent<IInputReader>();
-            Mover = new MoveWithCharacterController(this);
+            _mover = new MoveWithCharacterController(this);
             _animation = new CharacterAnimation(this);
             _xRotator = new RototorX(this);
             _yRotator = new RotatorY(this);
@@ -57,7 +58,7 @@ namespace UdemyProject3.Controllers
 
         void FixedUpdate()
         {
-            Mover.MoveAction(_direction,_moveSpeed);
+            _mover.MoveAction(_direction,_moveSpeed);
         }
 
         void LateUpdate()

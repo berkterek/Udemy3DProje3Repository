@@ -11,7 +11,7 @@ namespace UdemyProject3.States.EnemyStates
         {
             // Debug.Log($"{nameof(DeadState)} {nameof(OnEnter)}");
         }
-        
+
         public void OnExit()
         {
             // Debug.Log($"{nameof(DeadState)} {nameof(OnExit)}");
@@ -20,6 +20,15 @@ namespace UdemyProject3.States.EnemyStates
         public void Tick()
         {
             // Debug.Log(nameof(DeadState));
+        }
+        
+        public void TickFixed()
+        {
+            
+        }
+
+        public void TickLate()
+        {
         }
     }    
 }
