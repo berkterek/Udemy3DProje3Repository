@@ -9,17 +9,17 @@ namespace UdemyProject3.States.EnemyStates
     {
         public void OnEnter()
         {
-            // Debug.Log($"{nameof(AttackState)} {nameof(OnEnter)}");
+            Debug.Log($"{nameof(AttackState)} {nameof(OnEnter)}");
         }
         
         public void OnExit()
         {
-            // Debug.Log($"{nameof(AttackState)} {nameof(OnExit)}");
+            Debug.Log($"{nameof(AttackState)} {nameof(OnExit)}");
         }
 
         public void Tick()
         {
-            Debug.Log(nameof(AttackState));
+            // Debug.Log(nameof(AttackState));
         }
     }    
 }

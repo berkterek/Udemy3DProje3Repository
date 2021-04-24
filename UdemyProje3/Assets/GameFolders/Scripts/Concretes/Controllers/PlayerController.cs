@@ -17,7 +17,6 @@ namespace UdemyProject3.Controllers
         [SerializeField] Transform _turnTransform;
         
         IInputReader _input;
-        IMover _mover;
         IRotator _xRotator;
         IRotator _yRotator;
         CharacterAnimation _animation;
@@ -26,11 +25,12 @@ namespace UdemyProject3.Controllers
         Vector3 _direction;
 
         public Transform TurnTransform => _turnTransform;
+        public IMover Mover { get; private set; }
 
         void Awake()
         {
             _input = GetComponent<IInputReader>();
-            _mover = new MoveWithCharacterController(this);
+            Mover = new MoveWithCharacterController(this);
             _animation = new CharacterAnimation(this);
             _xRotator = new RototorX(this);
             _yRotator = new RotatorY(this);
@@ -57,7 +57,7 @@ namespace UdemyProject3.Controllers
 
         void FixedUpdate()
         {
-            _mover.MoveAction(_direction,_moveSpeed);
+            Mover.MoveAction(_direction,_moveSpeed);
         }
 
         void LateUpdate()

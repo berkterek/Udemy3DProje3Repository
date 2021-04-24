@@ -14,7 +14,6 @@ namespace UdemyProject3.Controllers
 {
     public class EnemyController : MonoBehaviour, IEntityController
     {
-        IMover _mover;
         IHealth _health;
         CharacterAnimation _animation;
         NavMeshAgent _navMeshAgent;
@@ -23,6 +22,8 @@ namespace UdemyProject3.Controllers
 
         Transform _playerTransform;
         bool _canAttack;
+        
+        public IMover Mover { get; private set; }
 
         public bool CanAttack =>
             Vector3.Distance(_playerTransform.position, this.transform.position) <= _navMeshAgent.stoppingDistance &&
@@ -30,7 +31,7 @@ namespace UdemyProject3.Controllers
 
         void Awake()
         {
-            _mover = new MoveWithNavMesh(this);
+            Mover = new MoveWithNavMesh(this);
             _animation = new CharacterAnimation(this);
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<IHealth>();
@@ -42,24 +43,20 @@ namespace UdemyProject3.Controllers
         {
             _playerTransform = FindObjectOfType<PlayerController>().transform;
 
+            ChaseState chaseState = new ChaseState(this,_playerTransform);
             AttackState attackState = new AttackState();
-            ChaseState chaseState = new ChaseState();
             DeadState deadState = new DeadState();
 
-            _stateMachine.AddState(chaseState, attackState, () => CanAttack == true);
-            _stateMachine.AddState(attackState, chaseState, () => CanAttack == false);
+            _stateMachine.AddState(chaseState, attackState, () => CanAttack);
+            _stateMachine.AddState(attackState, chaseState, () => !CanAttack);
             _stateMachine.AddAnyState(deadState, () => _health.IsDead);
             
-            _stateMachine.SetState(attackState);
+            _stateMachine.SetState(chaseState);
         }
 
         void Update()
         {
             if (_health.IsDead) return;
-
-            Debug.Log(CanAttack);
-
-            //_mover.MoveAction(_playerTransform.position, 10f);
 
             _stateMachine.Tick();
         }
