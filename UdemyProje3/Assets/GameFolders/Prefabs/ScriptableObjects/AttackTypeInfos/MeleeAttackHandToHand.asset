@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackType: 1
   _damage: 1
-  _floatValue: 0.3
+  _floatValue: 0.5
   _layerMask:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -47,12 +47,12 @@ namespace UdemyProject3.Controllers
 
             ChaseState chaseState = new ChaseState(this);
             AttackState attackState = new AttackState(this);
-            DeadState deadState = new DeadState();
+            DeadState deadState = new DeadState(this);
 
             _stateMachine.AddState(chaseState, attackState, () => CanAttack);
             _stateMachine.AddState(attackState, chaseState, () => !CanAttack);
             _stateMachine.AddAnyState(deadState, () => _health.IsDead);
-            
+
             _stateMachine.SetState(chaseState);
         }
 
