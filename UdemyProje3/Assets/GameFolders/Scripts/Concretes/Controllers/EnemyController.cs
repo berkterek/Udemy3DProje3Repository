@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UdemyProject3.Abstracts.Combats;
 using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
+using UdemyProject3.Combats;
 using UdemyProject3.Movements;
 using UdemyProject3.States.EnemyStates;
 using UnityEngine;
@@ -23,6 +23,7 @@ namespace UdemyProject3.Controllers
         public IMover Mover { get; private set; }
         public InventoryController Inventory { get; private set; }
         public CharacterAnimation Animation { get; private set; }
+        public Dead Dead { get; private set; }
         public Transform Target { get; set; }
         public float Magnitude => _navMeshAgent.velocity.magnitude;
 
@@ -39,6 +40,7 @@ namespace UdemyProject3.Controllers
             Mover = new MoveWithNavMesh(this);
             Animation = new CharacterAnimation(this);
             Inventory = GetComponent<InventoryController>();
+            Dead = GetComponent<Dead>();
         }
 
         void Start()
