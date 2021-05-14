@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UdemyProject3.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "Health Info", menuName = "Health Information/Create New", order = 51)]
+    [CreateAssetMenu(fileName = "Health Info", menuName = "Combat/Health Information/Create New", order = 51)]
     public class HealthSO : ScriptableObject
     {
         [SerializeField] int _maxHealth;
