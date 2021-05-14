@@ -13,6 +13,7 @@ namespace UdemyProject3.Combats
         int _currentHealth;
 
         public event System.Action<int, int> OnTakeHit;
+        public event System.Action OnDead;
 
         public bool IsDead => _currentHealth <= 0;
 
@@ -28,6 +29,11 @@ namespace UdemyProject3.Combats
             _currentHealth -= damage;
             
             OnTakeHit?.Invoke(_currentHealth,_healthInfo.MaxHealth);
+
+            if (IsDead)
+            {
+                OnDead?.Invoke();    
+            }
         }
     }    
 }

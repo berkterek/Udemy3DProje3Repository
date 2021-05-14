@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UdemyProject3.Abstracts.Combats;
 using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Inputs;
 using UdemyProject3.Abstracts.Movements;
@@ -20,17 +22,18 @@ namespace UdemyProject3.Controllers
         IRotator _xRotator;
         IRotator _yRotator;
         IMover _mover;
+        IHealth _health;
         CharacterAnimation _animation;
         InventoryController _inventory;
 
         Vector3 _direction;
 
         public Transform TurnTransform => _turnTransform;
-        
 
         void Awake()
         {
             _input = GetComponent<IInputReader>();
+            _health = GetComponent<IHealth>();
             _mover = new MoveWithCharacterController(this);
             _animation = new CharacterAnimation(this);
             _xRotator = new RototorX(this);
@@ -38,8 +41,15 @@ namespace UdemyProject3.Controllers
             _inventory = GetComponent<InventoryController>();
         }
 
+        void OnEnable()
+        {
+            _health.OnDead += () => _animation.DeadAnimation("death");
+        }
+
         void Update()
         {
+            if (_health.IsDead) return;
+            
             _direction = _input.Direction;
 
             _xRotator.RotationAction(_input.Rotation.x,_turnSpeed);
@@ -58,11 +68,15 @@ namespace UdemyProject3.Controllers
 
         void FixedUpdate()
         {
+            if (_health.IsDead) return;
+            
             _mover.MoveAction(_direction,_moveSpeed);
         }
 
         void LateUpdate()
         {
+            if (_health.IsDead) return;
+            
             _animation.MoveAnimation(_direction.magnitude);
             _animation.AttackAnimation(_input.IsAttackButtonPress);
         }
