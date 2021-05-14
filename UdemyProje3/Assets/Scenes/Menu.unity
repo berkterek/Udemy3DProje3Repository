@@ -301,6 +301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 635337902081469523, guid: 947ce61156fc12742a1ea13bb6b60187, type: 3}
+      propertyPath: _waveMaxCount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 901427039334422630, guid: 947ce61156fc12742a1ea13bb6b60187, type: 3}
       propertyPath: m_Name
       value: GameManager
