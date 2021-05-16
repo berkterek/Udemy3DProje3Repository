@@ -1,30 +1,11 @@
-using System;
+using UdemyProject3.Abstracts.Uis;
 using UdemyProject3.Managers;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace UdemyProject3.Uis
 {
-    public class StartButton : MonoBehaviour
+    public class StartButton : MyButton
     {
-        Button _button;
-
-        void Awake()
-        {
-            _button = GetComponent<Button>();
-        }
-
-        void OnEnable()
-        {
-            _button.onClick.AddListener(HandleOnButtonClicked);
-        }
-
-        void OnDisable()
-        {
-            _button.onClick.RemoveListener(HandleOnButtonClicked);
-        }
-
-        private void HandleOnButtonClicked()
+        protected override void HandleOnButtonClicked()
         {
             GameManager.Instance.LoadLevel("Game");
         }

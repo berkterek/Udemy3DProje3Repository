@@ -17,6 +17,9 @@ namespace UdemyProject3.Controllers
         float _moveSpeed = 10f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
+
+        [Header("Uis")] 
+        [SerializeField] GameObject _gameOverPanel;
         
         IInputReader _input;
         IRotator _xRotator;
@@ -43,7 +46,11 @@ namespace UdemyProject3.Controllers
 
         void OnEnable()
         {
-            _health.OnDead += () => _animation.DeadAnimation("death");
+            _health.OnDead += () =>
+            {
+                _animation.DeadAnimation("death");
+                _gameOverPanel.SetActive(true);
+            };
         }
 
         void Update()

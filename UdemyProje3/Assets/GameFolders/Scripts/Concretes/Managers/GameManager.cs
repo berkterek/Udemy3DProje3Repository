@@ -68,5 +68,18 @@ namespace UdemyProject3.Managers
         {
             _playerCount++;
         }
+
+        public void ReturnMenu()
+        {
+            if (_playerCount > 1)
+            {
+                _playerCount--;
+            }
+            else
+            {
+                _playerCount = 0;
+                LoadLevel("Menu");
+            }
+        }
     }    
 }

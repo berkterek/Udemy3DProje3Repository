@@ -6,7 +6,7 @@ namespace UdemyProject3.Managers
 {
     public class InputManager : MonoBehaviour
     {
-        [SerializeField] GameObject _prefab;
+        [SerializeField] GameObject[] _prefabs;
         
         PlayerInputManager _playerInputManager;
         int _playerIndex;
@@ -14,7 +14,7 @@ namespace UdemyProject3.Managers
         void Awake()
         {
             _playerInputManager = GetComponent<PlayerInputManager>();
-            _playerInputManager.playerPrefab = _prefab;
+            _playerInputManager.playerPrefab = _prefabs[_playerIndex];
         }
 
         void OnEnable()
@@ -36,11 +36,13 @@ namespace UdemyProject3.Managers
         public void HandleOnJoin()
         {
             _playerIndex++;
+            _playerInputManager.playerPrefab = _prefabs[_playerIndex];
         }
 
         public void HandleOnLeft()
         {
             _playerIndex--;
+            _playerInputManager.playerPrefab = _prefabs[_playerIndex];
         }
     }    
 }
