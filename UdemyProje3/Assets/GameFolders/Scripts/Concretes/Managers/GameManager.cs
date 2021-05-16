@@ -78,6 +78,7 @@ namespace UdemyProject3.Managers
             else
             {
                 _playerCount = 0;
+                EnemyManager.Instance.DestroyAllEnemies();
                 LoadLevel("Menu");
             }
         }

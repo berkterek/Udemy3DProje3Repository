@@ -1,4 +1,5 @@
 using UdemyProject3.Abstracts.Uis;
+using UdemyProject3.Managers;
 
 namespace UdemyProject3.Uis
 {
@@ -6,7 +7,7 @@ namespace UdemyProject3.Uis
     {
         protected override void HandleOnButtonClicked()
         {
-            
+            GameManager.Instance.ReturnMenu();
         }
     }    
 }
