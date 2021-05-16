@@ -1793,6 +1793,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1814191474288438833, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: KeyboardAndMouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814191474288438833, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
 --- !u!1001 &2374467166211723600

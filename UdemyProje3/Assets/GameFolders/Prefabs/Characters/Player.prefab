@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: cb51d5a86b426714181b3a2faf0bbea7, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: c835d040ee83bb04dbd133b66e60fd16, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -512,7 +512,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 0055359a-ab60-4861-b2bb-fc7c5b2abfe8
+    m_ActionId: fd48fd72-3fdc-4595-b3db-fd51b2c8fcc5
     m_ActionName: OnFoot/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right]
   - m_PersistentCalls:
       m_Calls:
@@ -528,8 +528,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 33d4c902-1e7f-4fc9-831c-b164a6f3e5f0
-    m_ActionName: OnFoot/Rotator[/Mouse/delta]
+    m_ActionId: 0acf0cdc-17ee-4312-a9c3-6c3627951dd6
+    m_ActionName: OnFoot/Rotator[/Mouse/delta,/DualShock4GamepadHID/rightStick]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814191474288438830}
@@ -544,8 +544,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: afe31941-5021-4a6e-81e9-21d79e44cde7
-    m_ActionName: OnFoot/Attack[/Mouse/leftButton]
+    m_ActionId: 16708ba0-a112-4258-9e49-7d7c80b708bf
+    m_ActionName: OnFoot/Attack[/Mouse/leftButton,/DualShock4GamepadHID/rightTrigger]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814191474288438830}
@@ -560,9 +560,49 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 372340a6-111f-49cb-8ef5-19debe2d8b2b
-    m_ActionName: OnFoot/Inventory[/Keyboard/i]
-  m_NeverAutoSwitchControlSchemes: 0
+    m_ActionId: df8ec7c0-745c-4c3b-9d37-082276921733
+    m_ActionName: OnFoot/Inventory[/Keyboard/i,/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
+    m_ActionName: UI/Navigate[/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/rightStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/rightStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/rightStick/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/rightStick/right,/DualShock4GamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7607c7b6-cd76-4816-beef-bd0341cfe950
+    m_ActionName: UI/Submit[/Keyboard/enter,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+    m_ActionName: UI/Cancel[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32b35790-4ed0-4e9a-aa41-69ac6d629449
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c7022bf-7922-4f7c-a998-c437916075ad
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0489e84a-4833-4c40-bfae-cea84b696689
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44b200b1-1557-4083-816c-b22cbdf77ddf
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24908448-c609-4bc3-a128-ea258674378a
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: OnFoot
   m_SplitScreenIndex: -1
