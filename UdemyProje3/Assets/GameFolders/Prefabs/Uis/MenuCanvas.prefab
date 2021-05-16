@@ -924,6 +924,7 @@ GameObject:
   - component: {fileID: 1110320083817067358}
   - component: {fileID: 1110320083817067347}
   - component: {fileID: 1110320083817067356}
+  - component: {fileID: 8120728551191808342}
   - component: {fileID: 1110320083817067357}
   m_Layer: 5
   m_Name: Player1Button
@@ -990,6 +991,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8120728551191808342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110320083817067359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7f0952747e7c54d8ba2810cb25f18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1110320083817067357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,6 +1245,7 @@ GameObject:
   - component: {fileID: 9128970611092957081}
   - component: {fileID: 107246842149557522}
   - component: {fileID: 3720740614382109154}
+  - component: {fileID: 5101056443554791284}
   - component: {fileID: 8406637494900791296}
   m_Layer: 5
   m_Name: Player2Button
@@ -1298,6 +1312,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5101056443554791284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800258625220347709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7f0952747e7c54d8ba2810cb25f18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8406637494900791296
 MonoBehaviour:
   m_ObjectHideFlags: 0
