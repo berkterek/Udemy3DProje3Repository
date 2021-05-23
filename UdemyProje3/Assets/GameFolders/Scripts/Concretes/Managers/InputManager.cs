@@ -36,12 +36,18 @@ namespace UdemyProject3.Managers
         public void HandleOnJoin()
         {
             _playerIndex++;
+
+            if (_playerIndex >= _prefabs.Length) _playerIndex = _prefabs.Length - 1;
+
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
         }
 
         public void HandleOnLeft()
         {
             _playerIndex--;
+
+            if (_playerIndex < 0) _playerIndex = 0;
+            
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
         }
     }    

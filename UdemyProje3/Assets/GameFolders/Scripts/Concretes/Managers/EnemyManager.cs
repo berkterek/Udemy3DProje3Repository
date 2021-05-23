@@ -10,6 +10,7 @@ namespace UdemyProject3.Managers
         [SerializeField] int _maxCountOnGame = 50;
         [SerializeField] List<EnemyController> _enemies;
 
+        public List<Transform> Targets { get; private set; }
         public bool CanSpawn => _maxCountOnGame > _enemies.Count;
         public bool IsListEmpty => _enemies.Count <= 0;
         
@@ -17,6 +18,7 @@ namespace UdemyProject3.Managers
         {
             SetSingletonThisGameObject(this);
             _enemies = new List<EnemyController>();
+            Targets = new List<Transform>();
         }
 
         public void AddEnemyController(EnemyController enemyController)

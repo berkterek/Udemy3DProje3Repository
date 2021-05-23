@@ -18,7 +18,7 @@ namespace UdemyProject3.Controllers
         StateMachine _stateMachine;
 
         bool _canAttack;
-        
+
         public IMover Mover { get; private set; }
         public InventoryController Inventory { get; private set; }
         public CharacterAnimation Animation { get; private set; }
@@ -35,7 +35,7 @@ namespace UdemyProject3.Controllers
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<IHealth>();
             _stateMachine = new StateMachine();
-            
+
             Mover = new MoveWithNavMesh(this);
             Animation = new CharacterAnimation(this);
             Inventory = GetComponent<InventoryController>();
@@ -44,7 +44,7 @@ namespace UdemyProject3.Controllers
 
         void Start()
         {
-            Target = FindObjectOfType<PlayerController>().transform;
+            FindNearestTarget();
 
             ChaseState chaseState = new ChaseState(this);
             AttackState attackState = new AttackState(this);
@@ -75,6 +75,24 @@ namespace UdemyProject3.Controllers
         void OnDestroy()
         {
             EnemyManager.Instance.RemoveEnemyController(this);
+        }
+
+        public void FindNearestTarget()
+        {
+            Transform nearest = EnemyManager.Instance.Targets[0];
+
+            foreach (Transform target in EnemyManager.Instance.Targets)
+            {
+                float nearestValue = Vector3.Distance(nearest.position, this.transform.position);
+                float newValue = Vector3.Distance(target.position, transform.position);
+
+                if (newValue < nearestValue)
+                {
+                    nearest = target;
+                }
+            }
+
+            Target = nearest;
         }
     }
 }

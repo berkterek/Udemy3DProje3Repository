@@ -6,6 +6,7 @@ using UdemyProject3.Abstracts.Controllers;
 using UdemyProject3.Abstracts.Inputs;
 using UdemyProject3.Abstracts.Movements;
 using UdemyProject3.Animations;
+using UdemyProject3.Managers;
 using UdemyProject3.Movements;
 using UnityEngine;
 
@@ -51,6 +52,13 @@ namespace UdemyProject3.Controllers
                 _animation.DeadAnimation("death");
                 _gameOverPanel.SetActive(true);
             };
+            
+            EnemyManager.Instance.Targets.Add(this.transform);
+        }
+
+        void OnDisable()
+        {
+            EnemyManager.Instance.Targets.Remove(this.transform);
         }
 
         void Update()
