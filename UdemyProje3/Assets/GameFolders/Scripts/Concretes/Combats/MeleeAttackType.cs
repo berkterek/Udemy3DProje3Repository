@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UdemyProject3.Abstracts.Combats;
+using UdemyProject3.Managers;
 using UdemyProject3.ScriptableObjects;
 using UnityEngine;
 
@@ -29,6 +30,8 @@ namespace UdemyProject3.Combats
                     health.TakeDamage(_attackSo.Damage);
                 }
             }
+
+            SoundManager.Instance.MeleeAttackSound(_attackSo.Clip,_transformObject.position);
         }
     }    
 }
