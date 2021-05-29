@@ -7,9 +7,10 @@ namespace UdemyProject3.Managers
     public class InputManager : MonoBehaviour
     {
         [SerializeField] GameObject[] _prefabs;
-        
+
         PlayerInputManager _playerInputManager;
         int _playerIndex;
+
 
         void Awake()
         {
@@ -25,7 +26,7 @@ namespace UdemyProject3.Managers
         IEnumerator LoadPlayersAsync()
         {
             WaitForSeconds waitForSeconds = new WaitForSeconds(1f);
-            
+
             for (int i = 0; i < GameManager.Instance.PlayerCount; i++)
             {
                 _playerInputManager.JoinPlayer(_playerIndex);
@@ -40,6 +41,8 @@ namespace UdemyProject3.Managers
             if (_playerIndex >= _prefabs.Length) _playerIndex = _prefabs.Length - 1;
 
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
+
+            _playerInputManager.splitScreen = true;
         }
 
         public void HandleOnLeft()
@@ -47,8 +50,10 @@ namespace UdemyProject3.Managers
             _playerIndex--;
 
             if (_playerIndex < 0) _playerIndex = 0;
-            
+
             _playerInputManager.playerPrefab = _prefabs[_playerIndex];
+            
+            _playerInputManager.splitScreen = false;
         }
-    }    
+    }
 }
