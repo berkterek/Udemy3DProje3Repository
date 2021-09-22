@@ -21,7 +21,7 @@ namespace UdemyProject3.Movements
             if (direction.magnitude == 0f) return;
             
             Vector3 worldPosition = _characterController.transform.TransformDirection(direction);
-            Vector3 movement = worldPosition * Time.deltaTime * moveSpeed;
+            Vector3 movement = worldPosition * (Time.deltaTime * moveSpeed);
 
             _characterController.Move(movement);
         }

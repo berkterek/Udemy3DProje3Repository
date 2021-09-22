@@ -148,7 +148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &96265426
 Transform:
   m_ObjectHideFlags: 0
@@ -1822,14 +1822,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8262624497991020859, guid: fab7e424ec147ac4fba467a108b17a46, type: 3}
-      propertyPath: m_JoinBehavior
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8262624497991020859, guid: fab7e424ec147ac4fba467a108b17a46, type: 3}
-      propertyPath: m_PlayerPrefab
-      value: 
-      objectReference: {fileID: 1814191474288438826, guid: 6794abc1e12bcd54aaf880103094c50a, type: 3}
     - target: {fileID: 9205928751169800258, guid: fab7e424ec147ac4fba467a108b17a46, type: 3}
       propertyPath: m_Name
       value: PlayerInputManager

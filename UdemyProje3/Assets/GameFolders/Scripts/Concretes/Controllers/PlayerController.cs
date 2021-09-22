@@ -15,6 +15,7 @@ namespace UdemyProject3.Controllers
         float _moveSpeed = 10f;
         [SerializeField] float _turnSpeed = 10f;
         [SerializeField] Transform _turnTransform;
+        [SerializeField] Transform _ribTransform;
 
         [Header("Uis")] 
         [SerializeField] GameObject _gameOverPanel;
@@ -22,12 +23,14 @@ namespace UdemyProject3.Controllers
         IInputReader _input;
         IRotator _xRotator;
         IRotator _yRotator;
+        IRotator _ribRotator;
         IMover _mover;
         IHealth _health;
         CharacterAnimation _animation;
         InventoryController _inventory;
 
         Vector3 _direction;
+        Vector3 _rotation;
 
         public Transform TurnTransform => _turnTransform;
 
@@ -39,6 +42,7 @@ namespace UdemyProject3.Controllers
             _animation = new CharacterAnimation(this);
             _xRotator = new RototorX(this);
             _yRotator = new RotatorY(this);
+            _ribRotator = new RibRotator(_ribTransform);
             _inventory = GetComponent<InventoryController>();
         }
 
@@ -63,9 +67,10 @@ namespace UdemyProject3.Controllers
             if (_health.IsDead) return;
             
             _direction = _input.Direction;
+            _rotation = _input.Rotation;
 
-            _xRotator.RotationAction(_input.Rotation.x,_turnSpeed);
-            _yRotator.RotationAction(_input.Rotation.y,_turnSpeed);
+            _xRotator.RotationAction(_rotation.x,_turnSpeed);
+            _yRotator.RotationAction(_rotation.y,_turnSpeed);
 
             if (_input.IsAttackButtonPress)
             {
@@ -91,6 +96,8 @@ namespace UdemyProject3.Controllers
             
             _animation.MoveAnimation(_direction.magnitude);
             _animation.AttackAnimation(_input.IsAttackButtonPress);
+            
+            _ribRotator.RotationAction(_rotation.y * -1f,_turnSpeed);
         }
     }
 }
